@@ -449,6 +449,47 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Success Criteria Banner */
+        .success-banner {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: linear-gradient(to right, var(--primary-light), #ffffff);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+        }
+
+        .success-banner h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .success-banner ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .success-banner li {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .success-banner li strong {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .success-banner li span {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 
@@ -544,20 +585,68 @@
                         </div>
                     </div>
 
-                    <div class="meta-grid" style="margin-top: 3rem;">
-                        <div class="meta-card">
-                            <h4><i data-lucide="check-circle-2"></i> 3. Success Criteria</h4>
-                            <ul>
-                                <li><strong>Passed "Human Shadowing":</strong> >90% accuracy vs. human baseline.</li>
-                                <li><strong>Safety Validation:</strong> Zero boundary violations during 14-day soak
-                                    test.</li>
-                                <li><strong>KPI Attainment:</strong> 24/7 autonomous task completion with measurable
-                                    ROI.</li>
-                            </ul>
+                    <div class="success-banner">
+                        <h4><i data-lucide="check-circle-2"></i> 3. Success Criteria</h4>
+                        <ul>
+                            <li>
+                                <strong>Passed "Human Shadowing"</strong>
+                                <span>>90% accuracy vs. human baseline.</span>
+                            </li>
+                            <li>
+                                <strong>Safety Validation</strong>
+                                <span>Zero boundary violations during 14-day soak test.</span>
+                            </li>
+                            <li>
+                                <strong>KPI Attainment</strong>
+                                <span>24/7 autonomous task completion with measurable ROI.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="token-menu"
+                        style="margin-top: 3rem; margin-bottom: 3rem; padding: 2rem; background: var(--bg-white); border: 1px solid var(--border-color); border-radius: 12px;">
+                        <h4
+                            style="color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
+                            <i data-lucide="coins"></i> Token Menu Card (Examples)
+                        </h4>
+                        <div class="token-grid"
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                            <div class="token-item">
+                                <span
+                                    style="display: block; font-size: 0.8em; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Small
+                                    (1-2 Tokens)</span>
+                                <strong style="display: block; color: var(--text-dark); margin-top: 0.25rem;">Simple RPA
+                                    Bot</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Example:
+                                    Email auto-responder, Daily CSV report generator.</p>
+                            </div>
+                            <div class="token-item">
+                                <span
+                                    style="display: block; font-size: 0.8em; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Medium
+                                    (3-5 Tokens)</span>
+                                <strong style="display: block; color: var(--text-dark); margin-top: 0.25rem;">L1 Support
+                                    Agent</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Example:
+                                    Slack-based IT helpdesk bot with Knoweldge Base RAG.</p>
+                            </div>
+                            <div class="token-item">
+                                <span
+                                    style="display: block; font-size: 0.8em; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Large
+                                    (8-10 Tokens)</span>
+                                <strong style="display: block; color: var(--text-dark); margin-top: 0.25rem;">Complex
+                                    Autonomous Persona</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Example:
+                                    End-to-end "HR Onboarding Specialist" with ERP write-access.</p>
+                            </div>
                         </div>
-                        <div class="meta-card">
+                    </div>
+
+                    <div class="meta-grid" style="margin-top: 3rem;">
+                        <!-- Audience Card Left Alone -->
+                        <div class="meta-card" style="grid-column: 1 / -1;">
                             <h4><i data-lucide="users-2"></i> Targeted Audience</h4>
-                            <ul>
+                            <ul
+                                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                                 <li>Business Unit Heads</li>
                                 <li>HR Directors (New Workforce)</li>
                                 <li>CDO / AI Transformation Leads</li>
@@ -728,19 +817,29 @@
                         </div>
                     </div>
 
+                    <div class="success-banner">
+                        <h4><i data-lucide="check-circle-2"></i> 4. Success Criteria</h4>
+                        <ul>
+                            <li>
+                                <strong>Scaled Adoption</strong>
+                                <span>Broad rollout without "quality collapse".</span>
+                            </li>
+                            <li>
+                                <strong>Reliability</strong>
+                                <span>100% of high-risk changes pass Human-in-the-Loop gates.</span>
+                            </li>
+                            <li>
+                                <strong>Velocity</strong>
+                                <span>Measured reduction in "Ticket-to-PR" time via TDAD.</span>
+                            </li>
+                        </ul>
+                    </div>
+
                     <div class="meta-grid" style="margin-top: 3rem;">
-                        <div class="meta-card">
-                            <h4><i data-lucide="check-circle-2"></i> 4. Success Criteria</h4>
-                            <ul>
-                                <li><strong>Scaled Adoption:</strong> Broad rollout without "quality collapse".</li>
-                                <li><strong>Reliability:</strong> 100% of high-risk changes pass Human-in-the-Loop
-                                    gates.</li>
-                                <li><strong>Velocity:</strong> Measured reduction in "Ticket-to-PR" time via TDAD.</li>
-                            </ul>
-                        </div>
-                        <div class="meta-card">
+                        <div class="meta-card" style="grid-column: 1 / -1;">
                             <h4><i data-lucide="users-2"></i> Targeted Audience</h4>
-                            <ul>
+                            <ul
+                                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                                 <li>CTO / VP Engineering</li>
                                 <li>Platform Architecture Leaders</li>
                                 <li>Security Advocates</li>
@@ -879,20 +978,33 @@
                         </div>
                     </div>
 
+                    <div class="success-banner">
+                        <h4><i data-lucide="check-circle-2"></i> 3. Success Criteria (A2A Gates)</h4>
+                        <ul>
+                            <li>
+                                <strong>Reliability</strong>
+                                <span>>95% Tool Selection Accuracy.</span>
+                            </li>
+                            <li>
+                                <strong>Groundedness</strong>
+                                <span>Zero hallucination in reasoning steps.</span>
+                            </li>
+                            <li>
+                                <strong>Efficiency</strong>
+                                <span>Optimized Latency & Token Cost per agentic loop.</span>
+                            </li>
+                            <li>
+                                <strong>Compliance</strong>
+                                <span>Signed AI Passport confirming Safety & Policy adherence.</span>
+                            </li>
+                        </ul>
+                    </div>
+
                     <div class="meta-grid" style="margin-top: 3rem;">
-                        <div class="meta-card">
-                            <h4><i data-lucide="check-circle-2"></i> 3. Success Criteria (A2A Gates)</h4>
-                            <ul>
-                                <li><strong>Reliability:</strong> >95% Tool Selection Accuracy.</li>
-                                <li><strong>Groundedness:</strong> Zero hallucination in reasoning steps.</li>
-                                <li><strong>Efficiency:</strong> Optimized Latency & Token Cost per agentic loop.</li>
-                                <li><strong>Compliance:</strong> Signed AI Passport confirming Safety & Policy
-                                    adherence.</li>
-                            </ul>
-                        </div>
-                        <div class="meta-card">
+                        <div class="meta-card" style="grid-column: 1 / -1;">
                             <h4><i data-lucide="users-2"></i> Targeted Audience</h4>
-                            <ul>
+                            <ul
+                                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                                 <li>CISO / Risk Officers</li>
                                 <li>CDO / Model Risk Leads</li>
                                 <li>Compliance & Legal Counsel</li>
@@ -1032,21 +1144,29 @@
                         </div>
                     </div>
 
+                    <div class="success-banner">
+                        <h4><i data-lucide="check-circle-2"></i> 3. Success Criteria</h4>
+                        <ul>
+                            <li>
+                                <strong>Migration Speed</strong>
+                                <span>60% faster 'Lab to Prod' cycle time for new agent personas.</span>
+                            </li>
+                            <li>
+                                <strong>Centralization</strong>
+                                <span>100% of used models tracked and audited via AI Gateway.</span>
+                            </li>
+                            <li>
+                                <strong>Self-Service</strong>
+                                <span>Instant provisioning of staging environments for developer squats.</span>
+                            </li>
+                        </ul>
+                    </div>
+
                     <div class="meta-grid" style="margin-top: 3rem;">
-                        <div class="meta-card">
-                            <h4><i data-lucide="check-circle-2"></i> 3. Success Criteria</h4>
-                            <ul>
-                                <li><strong>Migration Speed:</strong> 60% faster 'Lab to Prod' cycle time for new agent
-                                    personas.</li>
-                                <li><strong>Centralization:</strong> 100% of used models tracked and audited via AI
-                                    Gateway.</li>
-                                <li><strong>Self-Service:</strong> Instant provisioning of staging environments for
-                                    developer squats.</li>
-                            </ul>
-                        </div>
-                        <div class="meta-card">
+                        <div class="meta-card" style="grid-column: 1 / -1;">
                             <h4><i data-lucide="users-2"></i> Targeted Audience</h4>
-                            <ul>
+                            <ul
+                                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                                 <li>Cloud & Infra Architects</li>
                                 <li>Head of AI Platforms</li>
                                 <li>Enterprise DevOps Leads</li>
@@ -1184,21 +1304,29 @@
                         </div>
                     </div>
 
+                    <div class="success-banner">
+                        <h4><i data-lucide="check-circle-2"></i> 3. Success Criteria</h4>
+                        <ul>
+                            <li>
+                                <strong>Alignment</strong>
+                                <span>Signed-off transformation roadmap by the Board/C-Suite.</span>
+                            </li>
+                            <li>
+                                <strong>ROI Clarity</strong>
+                                <span>100% of active AI projects mapped to specific business value metrics.</span>
+                            </li>
+                            <li>
+                                <strong>COE Readiness</strong>
+                                <span>Established RACI and AI Approval Board framework internally.</span>
+                            </li>
+                        </ul>
+                    </div>
+
                     <div class="meta-grid" style="margin-top: 3rem;">
-                        <div class="meta-card">
-                            <h4><i data-lucide="check-circle-2"></i> 3. Success Criteria</h4>
-                            <ul>
-                                <li><strong>Alignment:</strong> Signed-off transformation roadmap by the Board/C-Suite.
-                                </li>
-                                <li><strong>ROI Clarity:</strong> 100% of active AI projects mapped to specific business
-                                    value metrics.</li>
-                                <li><strong>COE Readiness:</strong> Established RACI and AI Approval Board framework
-                                    internally.</li>
-                            </ul>
-                        </div>
-                        <div class="meta-card">
+                        <div class="meta-card" style="grid-column: 1 / -1;">
                             <h4><i data-lucide="users-2"></i> Targeted Audience</h4>
-                            <ul>
+                            <ul
+                                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                                 <li>CEO / Board of Directors</li>
                                 <li>Chief Data Officer (CDO)</li>
                                 <li>Executive Head of Strategy</li>
