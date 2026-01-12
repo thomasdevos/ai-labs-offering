@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Labs FY26 | Agentic Offerings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #007d40;
+            /* Sahara Green / Enterprise Green */
+            --primary-light: #e6f2ec;
+            --text-dark: #111827;
+            --text-muted: #4b5563;
+            --text-light: #9ca3af;
+            --bg-white: #ffffff;
+            --bg-off-white: #f9fafb;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--text-dark);
+            font-weight: 400;
+        }
+
+        /* Main Content */
+        main {
+            padding: 4rem 0;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .intro h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Offerings Grid */
+        .offerings-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--border-color);
+            background: var(--bg-white);
+            border-radius: 9999px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover,
+        .nav-btn.active {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        /* Offering Section */
+        .offering-section {
+            display: none;
+            padding-top: 2rem;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .offering-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .offering-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            align-items: start;
+        }
+
+        .offering-title-area h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .why-section {
+            margin-bottom: 4rem;
+            padding: 2.5rem;
+            border-left: 4px solid var(--primary);
+            background: var(--bg-off-white);
+            border-radius: 0 16px 16px 0;
+        }
+
+        .why-section h3 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .why-section p {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .meta-card {
+            padding: 1.5rem;
+            background: var(--bg-off-white);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .meta-card h4 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-card ul {
+            list-style: none;
+        }
+
+        .meta-card li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-card li::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        /* Value Prop Canvas */
+        .vpc-container {
+            margin-top: 4rem;
+        }
+
+        .vpc-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .canvas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background: var(--bg-off-white);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .canvas-side {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .canvas-card {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            flex: 1;
+        }
+
+        .canvas-card h4 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+        }
+
+        .canvas-card ul {
+            list-style: none;
+        }
+
+        .canvas-card li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Team Composition */
+        .team-section {
+            margin-top: 4rem;
+            padding: 2rem;
+            border: 1px dashed var(--border-color);
+            border-radius: 16px;
+        }
+
+        .team-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .member-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .member-role {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .member-desc {
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        /* Delivery Blueprint */
+        .delivery-blueprint {
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: var(--primary-light);
+            border-radius: 16px;
+        }
+
+        .delivery-blueprint h3 {
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .blueprint-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .blueprint-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .blueprint-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .blueprint-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .blueprint-success {
+            grid-column: 1 / -1;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 125, 64, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .success-tag {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        /* Deliverables Section */
+        .deliverables-section {
+            margin-top: 3rem;
+        }
+
+        .deliverables-section h3 {
+            margin-bottom: 1.5rem;
+            text-align: left;
+            font-size: 1.25rem;
+        }
+
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .deliverable-card {
+            padding: 1.5rem;
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .deliverable-card strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .deliverable-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 900px) {
+
+            .offering-header,
+            .canvas-grid,
+            .meta-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">AI LABS <span>FY26 OFFERINGS</span></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="intro">
+            <h1>Modern AI Portfolio</h1>
+            <p>Strategic, high-impact offerings designed to transform enterprise operations into AI-native
+                organizations.</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="offerings-nav">
+            <a href="#digital-employee" class="nav-btn active" onclick="showOffering('digital-employee', event)">Digital
+                Employee</a>
+            <a href="#agentic-engineering" class="nav-btn" onclick="showOffering('agentic-engineering', event)">Agentic
+                Engineering</a>
+            <a href="#journey-production" class="nav-btn" onclick="showOffering('journey-production', event)">Journey to
+                Production</a>
+            <a href="#agentic-platform" class="nav-btn" onclick="showOffering('agentic-platform', event)">Agentic
+                Platform</a>
+            <a href="#strategy-advisory" class="nav-btn" onclick="showOffering('strategy-advisory', event)">Strategy
+                Advisory</a>
+        </div>
+
+        <!-- 1. Digital Employee Services -->
+        <div id="digital-employee" class="offering-section active">
+            <div class="offering-header">
+                <div class="offering-title-area">
+                    <h2>Digital Employee Services</h2>
+
+                    <div class="why-section">
+                        <h3>1. Why this service?</h3>
+                        <p>Scaling operations today is constrained by linear hiring. We deliver autonomous digital
+                            workers that bypass this limit, moving beyond "demo-grade" AI to "production-ready"
+                            colleagues with built-in safety.</p>
+                    </div>
+
+                    <div class="deliverables-section" style="margin-top: 0;">
+                        <h3>2. What we deliver</h3>
+                        <div class="deliverables-grid">
+                            <div class="deliverable-card">
+                                <strong>Autonomy Boundaries</strong>
+                                <p>Definition of allowed/disallowed actions and automated "kill-switches" for runtime
+                                    safety.</p>
+                            </div>
+                            <div class="deliverable-card">
+                                <strong>Persona & Memory Design</strong>
+                                <p>Blueprint of the agent's role, behavioral tone, and integration with long-term
+                                    enterprise memory (RAG).</p>
+                            </div>
+                            <div class="deliverable-card">
+                                <strong>A2A Shadow Evaluation</strong>
+                                <p>Rigorous testing of agent reasoning in "Shadow Mode" against real production traffic
+                                    without user impact.</p>
+                            </div>
+                            <div class="deliverable-card">
+                                <strong>Live Digital Employee</strong>
+                                <p>A fully provisioned autonomous worker integrated into your SSO, Auth, and core
+                                    systems.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="meta-grid" style="margin-top: 3rem;">
+                        <div class="meta-card">
+                            <h4><i data-lucide="check-circle-2"></i> 3. Success Criteria</h4>
+                            <ul>
+                                <li><strong>Passed "Human Shadowing":</strong> >90% accuracy vs. human baseline.</li>
+                                <li><strong>Safety Validation:</strong> Zero boundary violations during 14-day soak
+                                    test.</li>
+                                <li><strong>KPI Attainment:</strong> 24/7 autonomous task completion with measurable
+                                    ROI.</li>
+                            </ul>
+                        </div>
+                        <div class="meta-card">
+                            <h4><i data-lucide="users-2"></i> Targeted Audience</h4>
+                            <ul>
+                                <li>Business Unit Heads</li>
+                                <li>HR Directors (New Workforce)</li>
+                                <li>CDO / AI Transformation Leads</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-section" style="margin-top: 0;">
+                    <h3>Delivery Team</h3>
+                    <div class="team-grid" style="grid-template-columns: 1fr;">
+                        <div class="team-member">
+                            <div class="member-icon"><i data-lucide="users"></i></div>
+                            <div class="member-role">Agent Architect</div>
+                            <div class="member-desc">Technical lead for persona & memory design</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-icon"><i data-lucide="settings"></i></div>
+                            <div class="member-role">Integration Engineer</div>
+                            <div class="member-desc">Auth & System API connectivity</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-icon"><i data-lucide="bar-chart-3"></i></div>
+                            <div class="member-role">Ops/KPI Lead</div>
+                            <div class="member-desc">Measurement & performance monitoring</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vpc-container">
+                <h3 class="vpc-title">Value Proposition Canvas</h3>
+                <div class="canvas-grid">
+                    <div class="canvas-side">
+                        <div class="canvas-card">
+                            <h4><i data-lucide="user"></i> Customer Profile</h4>
+                            <ul>
+                                <li><strong>Jobs:</strong> Scaling without linear hiring</li>
+                                <li><strong>Pains:</strong> Rising costs & human error</li>
+                                <li><strong>Gains:</strong> Exponential throughput</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="canvas-side">
+                        <div class="canvas-card">
+                            <h4><i data-lucide="gift"></i> Value Map</h4>
+                            <ul>
+                                <li><strong>Services:</strong> Digital Persona Blueprint</li>
+                                <li><strong>Relievers:</strong> Role-based access controls</li>
+                                <li><strong>Creators:</strong> 24/7 autonomous execution</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="delivery-blueprint">
+                <h3>Engagement Quick Facts</h3>
+                <div class="blueprint-grid">
+                    <div class="blueprint-item">
+                        <span class="blueprint-label">Practical Setup</span>
+                        <span class="blueprint-value">Hybrid (On-site Kickoff, Remote Build)</span>
+                    </div>
+                    <div class="blueprint-item">
+                        <span class="blueprint-label">Duration</span>
+                        <span class="blueprint-value">8 Weeks (Structured Rollout)</span>
+                    </div>
+                    <div class="blueprint-item">
+                        <span class="blueprint-label">Commercial Model</span>
+                        <span class="blueprint-value">Digital Employee Pod (Token-Based)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Agentic Software Engineering -->
+        <div id="agentic-engineering" class="offering-section">
+            <div class="offering-header">
+                <div class="offering-title-area">
+                    <h2>Agentic Software Engineering</h2>
+
+                    <div class="why-section">
+                        <h3>1. Why this service?</h3>
+                        <p>Most organizations are stuck. Individual champions get massive leverage from tools like
+                            Cursor or Claude, but Leadership cannot approve broad rollouts without controls. We bridge
+                            the gap between "ad-hoc experimentation" and a safe, scalable, measurable engineering
+                            capability.</p>
+                    </div>
+
+                    <div class="methodology-section" style="margin-top: 3rem; margin-bottom: 3rem;">
+                        <h3>2. How we do it (The Prepare-Do-Validate Model)</h3>
+                        <div class="features-grid"
+                            style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                            <div class="feature-card"
+                                style="background: var(--bg-white); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">1. Prepare</h4>
+                                <p style="font-size: 0.95rem; color: var(--text-muted);"><strong>Context
+                                        Engineering:</strong> Establish global "Hot Rules" and "Cold Knowledge" so agent
+                                    behavior is predictable and aligned with your coding standards.</p>
+                            </div>
+                            <div class="feature-card"
+                                style="background: var(--bg-white); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">2. Do</h4>
+                                <p style="font-size: 0.95rem; color: var(--text-muted);"><strong>Production
+                                        Engineering:</strong> Implement Test-Driven Agentic Development (TDAD) and
+                                    "Human-in-the-Loop" gates for safe, reliability-first delivery.</p>
+                            </div>
+                            <div class="feature-card"
+                                style="background: var(--bg-white); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">3. Validate</h4>
+                                <p style="font-size: 0.95rem; color: var(--text-muted);"><strong>ROI
+                                        Components:</strong> Move from "vibes" to defensible ROI with utilization
+                                    dashboards and automated quality/security governance.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="deliverables-section" style="margin-top: 0;">
+                        <h3>3. What we deliver</h3>
+                        <div class="deliverables-grid">
+                            <div class="deliverable-card">
+                                <strong>Context Engineering</strong>
+                                <p>Single source of truth for agents: Global policy packs and "Context Hygiene" to
+                                    prevent knowledge rot.</p>
+                            </div>
+                            <div class="deliverable-card">
+                                <strong>Human-Agent "RIPER" Model</strong>
+                                <p>Operating model for "Reasoning, Innovating, Planning, Executing, Reviewing" with
+                                    agents.</p>
+                            </div>
+                            <div class="deliverable-card">
+                                <strong>Legacy Replay Harness</strong>
+                                <p>Modernization with proof: Record-Replay-Compare strategies to verify parity in
+                                    agent-refactored code.</p>
+                            </div>
+                            <div class="deliverable-card">
+                                <strong>ROI Dashboarding</strong>
+                                <p>Defensible metrics tracking Utilization, Cycle Time, and PR Throughput to prove value
+                                    to Finance.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="meta-grid" style="margin-top: 3rem;">
+                        <div class="meta-card">
+                            <h4><i data-lucide="check-circle-2"></i> 4. Success Criteria</h4>
+                            <ul>
+                                <li><strong>Scaled Adoption:</strong> Broad rollout without "quality collapse".</li>
+                                <li><strong>Reliability:</strong> 100% of high-risk changes pass Human-in-the-Loop
+                                    gates.</li>
+                                <li><strong>Velocity:</strong> Measured reduction in "Ticket-to-PR" time via TDAD.</li>
+                            </ul>
+                        </div>
+                        <div class="meta-card">
+                            <h4><i data-lucide="users-2"></i> Targeted Audience</h4>
+                            <ul>
+                                <li>CTO / VP Engineering</li>
+                                <li>Platform Architecture Leaders</li>
+                                <li>Security Advocates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-section" style="margin-top: 0;">
+                    <h3>Delivery Team</h3>
+                    <div class="team-grid" style="grid-template-columns: 1fr;">
+                        <div class="team-member">
+                            <div class="member-icon"><i data-lucide="code-2"></i></div>
+                            <div class="member-role">AI Engineering Lead</div>
+                            <div class="member-desc">SDLC agentic workflow specialist</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-icon"><i data-lucide="git-branch"></i></div>
+                            <div class="member-role">DevOps AI Expert</div>
+                            <div class="member-desc">Automated CI/CD for agents</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-icon"><i data-lucide="shield-check"></i></div>
+                            <div class="member-role">Security/Audit Lead</div>
+                            <div class="member-desc">Secure code generation guardrails</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vpc-container">
+                <h3 class="vpc-title">Value Proposition Canvas</h3>
+                <div class="canvas-grid">
+                    <div class="canvas-side">
+                        <div class="canvas-card">
+                            <h4><i data-lucide="user"></i> Customer Profile</h4>
+                            <ul>
+                                <li><strong>Jobs:</strong> Rapid feature deployment</li>
+                                <li><strong>Pains:</strong> Talents scarcity & technical debt</li>
+                                <li><strong>Gains:</strong> Instant prototype turnarounds</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="canvas-side">
+                        <div class="canvas-card">
+                            <h4><i data-lucide="gift"></i> Value Map</h4>
+                            <ul>
+                                <li><strong>Services:</strong> Agentic SDLC Framework</li>
+                                <li><strong>Relievers:</strong> Automated bug triage</li>
+                                <li><strong>Creators:</strong> AI-augmented developer velocity</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="delivery-blueprint">
+                <h3>Engagement Quick Facts</h3>
+                <div class="blueprint-grid">
+                    <div class="blueprint-item">
+                        <span class="blueprint-label">Practical Setup</span>
+                        <span class="blueprint-value">Onshore / On-site Embedded Squad</span>
+                    </div>
+                    <div class="blueprint-item">
+                        <span class="blueprint-label">Duration</span>
+                        <span class="blueprint-value">2-3 Wk Foundation / 6-8 Wk Delivery</span>
+                    </div>
+                    <div class="blueprint-item">
+                        <span class="blueprint-label">Commercial Model</span>
+                        <span class="blueprint-value">Engineering Pod (Token-Based)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Agentic Journey to Production -->
+        <div id="journey-production" class="offering-section">
+            <div class="offering-header">
+                <div class="offering-title-area">
+                    <h2>Agentic Journey to Production</h2>
+
+                    <div class="why-section">
+                        <h3>1. Why this service?</h3>
+                        <p>Most AI projects die as demos. We bridge the "Last Mile" by implementing the guardrails and
+                            A2A evaluation gates required to move agents from experimentation to governed enterprise
+                            production.</p>
+                    </div>
+
+                    <div class="deliverables-section" style="margin-top: 0;">
+                        <h3>2. What we deliver</h3>
+                        <div class="deliverables-grid">
+                            <div class="deliverable-card">
+                                <strong>A2A Evaluation Gates</strong>
+                                <p>Automated evaluation of reasoning, groundedness, and tool-selection accuracy vs.
+                                    thresholds.</p>
+                            </div>
+                            <div class="deliverable-card">
+                                <strong>Safeguards Architecture</strong>
+                                <p>Runtime enforcement layers for input/output filtering and rate-limit "kill switches".
+                                </p>
+                            </div>
+                            <div class="deliverable-card">
+                                <strong>AI Approval Board (RACI)</strong>
+                                <p>Formal manual decision board setup to approve accuracy, risk, and compliance
+                                    thresholds.</p>
+                            </div>
+                            <div class="deliverable-card">
+                                <strong>Enterprise AI Passport</strong>
+                                <p>Standardized, signed "A2A Cards" and Eval reports confirming production readiness.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="meta-grid" style="margin-top: 3rem;">
+                        <div class="meta-card">
+                            <h4><i data-lucide="check-circle-2"></i> 3. Success Criteria (A2A Gates)</h4>
+                            <ul>
+                                <li><strong>Reliability:</strong> >95% Tool Selection Accuracy.</li>
+                                <li><strong>Groundedness:</strong> Zero hallucination in reasoning steps.</li>
+                                <li><strong>Efficiency:</strong> Optimized Latency & Token Cost per agentic loop.</li>
+                                <li><strong>Compliance:</strong> Signed AI Passport confirming Safety & Policy
+                                    adherence.</li>
+                            </ul>
+                        </div>
+                        <div class="meta-card">
+                            <h4><i data-lucide="users-2"></i> Targeted Audience</h4>
+                            <ul>
+                                <li>CISO / Risk Officers</li>
+                                <li>CDO / Model Risk Leads</li>
+                                <li>Compliance & Legal Counsel</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-section" style="margin-top: 0;">
+                    <h3>Delivery Team</h3>
+                    <div class="team-grid" style="grid-template-columns: 1fr;">
+                        <div class="team-member">
+                            <div class="member-icon"><i data-lucide="shield"></i></div>
+                            <div class="member-role">Compliance Architect</div>
+                            <div class="member-desc">Governance & Technical standards</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-icon"><i data-lucide="database"></i></div>
+                            <div class="member-role">AI Ops Engineer</div>
+                            <div class="member-desc">Model serving & scale specialist</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-icon"><i data-lucide="lock"></i></div>
+                            <div class="member-role">Security Liaison</div>
+                            <div class="member-desc">Pen-testing & Data privacy lead</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vpc-container">
+                <h3 class="vpc-title">Value Proposition Canvas</h3>
+                <div class="canvas-grid">
+                    <div class="canvas-side">
+                        <div class="canvas-card">
+                            <h4><i data-lucide="user"></i> Customer Profile</h4>
+                            <ul>
+                                <li><strong>Jobs:</strong> De-risking AI investments</li>
+                                <li><strong>Pains:</strong> Security fear & regulatory risk</li>
+                                <li><strong>Gains:</strong> Enterprise-wide reliability</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="canvas-side">
+                        <div class="canvas-card">
+                            <h4><i data-lucide="gift"></i> Value Map</h4>
+                            <ul>
+                                <li><strong>Services:</strong> Production Readiness Audit</li>
+                                <li><strong>Relievers:</strong> Automated Guardrails</li>
+                                <li><strong>Creators:</strong> Trusted AI Brand Rep</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="delivery-blueprint">
+                <h3>Engagement Quick Facts</h3>
+                <div class="blueprint-grid">
+                    <div class="blueprint-item">
+                        <span class="blueprint-label">Practical Setup</span>
+                        <span class="blueprint-value">Remote (Tech Audit) + On-site Exec Briefing</span>
+                    </div>
+                    <div class="blueprint-item">
+                        <span class="blueprint-label">Duration</span>
+                        <span class="blueprint-value">4-Week Diagnostic & Sprint</span>
+                    </div>
+                    <div class="blueprint-item">
+                        <span class="blueprint-label">Commercial Model</span>
+                        <span class="blueprint-value">Governance Pod (Token-Based)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Agentic Platform (Labs 3.0) -->
+        <div id="agentic-platform" class="offering-section">
+            <div class="offering-header">
+                <div class="offering-title-area">
+                    <h2>Agentic Platform (Labs 3.0)</h2>
+
+                    <div class="why-section">
+                        <h3>1. Why this service?</h3>
+                        <p>Scaling agents requires a governed AgentOps bedrock. We provide the central
+                            infrastructure—Model Gateways, Registries, and Observability—to prevent tool sprawl and
+                            maintain central control.</p>
+                    </div>
+
+                    <div class="deliverables-section" style="margin-top: 0;">
+                        <h3>2. What we deliver</h3>
+                        <div class="deliverables-grid">
+                            <div class="deliverable-card">
+                                <strong>Integrated AgentOps Console</strong>
+                                <p>A unified portal for monitoring agent reasoning, token costs, and lifecycle status
+                                    globally.</p>
+                            </div>
+                            <div class="deliverable-card">
+                                <strong>AI Model Gateway & Registry</strong>
+                                <p>Centralized repository for allowed agents, tools, and models with built-in
+                                    versioning.</p>
+                            </div>
+                            <div class="deliverable-card">
+                                <strong>As-Code Env Templates</strong>
+                                <p>Ready-to-use Dev/Stage/Prod environment blueprints with integrated security
+                                    guardrails.</p>
+                            </div>
+                            <div class="deliverable-card">
+                                <strong>Deploy Orchestrator</strong>
+                                <p>Automated pipelines for 'Canary' releases and health-check loops across multi-cloud.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="meta-grid" style="margin-top: 3rem;">
+                        <div class="meta-card">
+                            <h4><i data-lucide="check-circle-2"></i> 3. Success Criteria</h4>
+                            <ul>
+                                <li><strong>Migration Speed:</strong> 60% faster 'Lab to Prod' cycle time for new agent
+                                    personas.</li>
+                                <li><strong>Centralization:</strong> 100% of used models tracked and audited via AI
+                                    Gateway.</li>
+                                <li><strong>Self-Service:</strong> Instant provisioning of staging environments for
+                                    developer squats.</li>
+                            </ul>
+                        </div>
+                        <div class="meta-card">
+                            <h4><i data-lucide="users-2"></i> Targeted Audience</h4>
+                            <ul>
+                                <li>Cloud & Infra Architects</li>
+                                <li>Head of AI Platforms</li>
+                                <li>Enterprise DevOps Leads</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-section" style="margin-top: 0;">
+                    <h3>Delivery Team</h3>
+                    <div class="team-grid" style="grid-template-columns: 1fr;">
+                        <div class="team-member">
+                            <div class="member-icon"><i data-lucide="cloud"></i></div>
+                            <div class="member-role">Cloud Architect</div>
+                            <div class="member-desc">AI-optimized infra specialist</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-icon"><i data-lucide="layers"></i></div>
+                            <div class="member-role">DevOps Engineer</div>
+                            <div class="member-desc">Scaling CI/CD for LLM systems</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-icon"><i data-lucide="cpu"></i></div>
+                            <div class="member-role">Hardware Expert</div>
+                            <div class="member-desc">GPU orchestration & provisioning</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vpc-container">
+                <h3 class="vpc-title">Value Proposition Canvas</h3>
+                <div class="canvas-grid">
+                    <div class="canvas-side">
+                        <div class="canvas-card">
+                            <h4><i data-lucide="user"></i> Customer Profile</h4>
+                            <ul>
+                                <li><strong>Jobs:</strong> Providing stable AI workspace</li>
+                                <li><strong>Pains:</strong> Fragmented toolsets & sprawl</li>
+                                <li><strong>Gains:</strong> Developer self-service infra</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="canvas-side">
+                        <div class="canvas-card">
+                            <h4><i data-lucide="gift"></i> Value Map</h4>
+                            <ul>
+                                <li><strong>Services:</strong> Labs 3.0 Platform Blueprint</li>
+                                <li><strong>Relievers:</strong> Unified Token Manager</li>
+                                <li><strong>Creators:</strong> Rapid iteration capability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="delivery-blueprint">
+                <h3>Engagement Quick Facts</h3>
+                <div class="blueprint-grid">
+                    <div class="blueprint-item">
+                        <span class="blueprint-label">Practical Setup</span>
+                        <span class="blueprint-value">Pure Remote (As-Code Provisioning)</span>
+                    </div>
+                    <div class="blueprint-item">
+                        <span class="blueprint-label">Duration</span>
+                        <span class="blueprint-value">6-Week Setup + Lifecycle Support</span>
+                    </div>
+                    <div class="blueprint-item">
+                        <span class="blueprint-label">Commercial Model</span>
+                        <span class="blueprint-value">Infrastructure Pod (Token-Based)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Innovation & Strategy Advisory -->
+        <div id="strategy-advisory" class="offering-section">
+            <div class="offering-header">
+                <div class="offering-title-area">
+                    <h2>Innovation & Strategy Advisory</h2>
+
+                    <div class="why-section">
+                        <h3>1. Why this service?</h3>
+                        <p>Most enterprises lack a clear ROI roadmap for AI. We align the C-suite on high-impact use
+                            cases and the necessary governance shifts to become a truly AI-Native organization.</p>
+                    </div>
+
+                    <div class="deliverables-section" style="margin-top: 0;">
+                        <h3>2. What we deliver</h3>
+                        <div class="deliverables-grid">
+                            <div class="deliverable-card">
+                                <strong>AI Opportunity Map</strong>
+                                <p>A prioritized backlog of high-ROI use cases mapped directly to your business unit
+                                    objectives.</p>
+                            </div>
+                            <div class="deliverable-card">
+                                <strong>ROI Value Projection</strong>
+                                <p>Detailed financial modeling for AI investments, including TCO and projected
+                                    productivity gains.</p>
+                            </div>
+                            <div class="deliverable-card">
+                                <strong>Governance SOPs</strong>
+                                <p>Comprehensive standard operating procedures for ethical AI use and the setup of an AI
+                                    Approval Board.</p>
+                            </div>
+                            <div class="deliverable-card">
+                                <strong>Transformation Deck</strong>
+                                <p>A board-ready strategic presentation to justify investment in Agentic workforce
+                                    transformation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="meta-grid" style="margin-top: 3rem;">
+                        <div class="meta-card">
+                            <h4><i data-lucide="check-circle-2"></i> 3. Success Criteria</h4>
+                            <ul>
+                                <li><strong>Alignment:</strong> Signed-off transformation roadmap by the Board/C-Suite.
+                                </li>
+                                <li><strong>ROI Clarity:</strong> 100% of active AI projects mapped to specific business
+                                    value metrics.</li>
+                                <li><strong>COE Readiness:</strong> Established RACI and AI Approval Board framework
+                                    internally.</li>
+                            </ul>
+                        </div>
+                        <div class="meta-card">
+                            <h4><i data-lucide="users-2"></i> Targeted Audience</h4>
+                            <ul>
+                                <li>CEO / Board of Directors</li>
+                                <li>Chief Data Officer (CDO)</li>
+                                <li>Executive Head of Strategy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-section" style="margin-top: 0;">
+                    <h3>Delivery Team</h3>
+                    <div class="team-grid" style="grid-template-columns: 1fr;">
+                        <div class="team-member">
+                            <div class="member-icon"><i data-lucide="briefcase"></i></div>
+                            <div class="member-role">Strategy Director</div>
+                            <div class="member-desc">C-suite advisory specialist</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-icon"><i data-lucide="network"></i></div>
+                            <div class="member-role">Domain Subject Expert</div>
+                            <div class="member-desc">Industry-specific AI application</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-icon"><i data-lucide="file-text"></i></div>
+                            <div class="member-role">Business Analyst</div>
+                            <div class="member-desc">ROI modeling & Value tracking</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vpc-container">
+                <h3 class="vpc-title">Value Proposition Canvas</h3>
+                <div class="canvas-grid">
+                    <div class="canvas-side">
+                        <div class="canvas-card">
+                            <h4><i data-lucide="user"></i> Customer Profile</h4>
+                            <ul>
+                                <li><strong>Jobs:</strong> Justifying spend to the board</li>
+                                <li><strong>Pains:</strong> Fear of being leapfrogged</li>
+                                <li><strong>Gains:</strong> Clear, executable AI vision</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="canvas-side">
+                        <div class="canvas-card">
+                            <h4><i data-lucide="gift"></i> Value Map</h4>
+                            <ul>
+                                <li><strong>Services:</strong> AI Transformation Strategy</li>
+                                <li><strong>Relievers:</strong> Competitive Gap Analysis</li>
+                                <li><strong>Creators:</strong> AI-Native status differentiator</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="delivery-blueprint">
+                <h3>Engagement Quick Facts</h3>
+                <div class="blueprint-grid">
+                    <div class="blueprint-item">
+                        <span class="blueprint-label">Practical Setup</span>
+                        <span class="blueprint-value">On-site Executive Workshops</span>
+                    </div>
+                    <div class="blueprint-item">
+                        <span class="blueprint-label">Duration</span>
+                        <span class="blueprint-value">5-Day Intensive / 3-Month Retainer</span>
+                    </div>
+                    <div class="blueprint-item">
+                        <span class="blueprint-label">Commercial Model</span>
+                        <span class="blueprint-value">Strategy Pod (Token-Based)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Pod Delivery Model Section -->
+        <section id="delivery-model" class="container"
+            style="margin-top: 6rem; margin-bottom: 6rem; border-top: 1px solid var(--border-color); padding-top: 6rem;">
+            <div class="offering-header" style="text-align: center; margin-bottom: 4rem;">
+                <h2>The "AI Pod" Delivery Model</h2>
+                <p class="offering-description" style="max-width: 800px; margin: 0 auto;">
+                    Moving beyond Time & Materials. We engage via <strong>AI Pods</strong>—outcome-focused squads
+                    powered by a
+                    <strong>Token-Based Subscription</strong>. You pay for value delivered, not hours spent.
+                </p>
+            </div>
+
+            <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <!-- The AI Pod -->
+                <div class="feature-card"
+                    style="background: var(--bg-white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border-color);">
+                    <h3
+                        style="color: var(--primary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                        <i data-lucide="box"></i> The AI Pod
+                    </h3>
+                    <p style="font-size: 1.1rem; color: var(--text-dark); margin-bottom: 1.5rem;">
+                        An elastic, multi-disciplinary unit combining human expertise with autonomous agents.
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i data-lucide="check-circle-2"
+                                style="color: var(--primary); width: 20px; flex-shrink: 0; margin-top: 4px;"></i>
+                            <span><strong>Human Core:</strong> Dedicated AI Architect, Data Engineer, Domain SME, and
+                                Compliance Lead.</span>
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i data-lucide="check-circle-2"
+                                style="color: var(--primary); width: 20px; flex-shrink: 0; margin-top: 4px;"></i>
+                            <span><strong>Agentic Augmentation:</strong> Pods are equipped with specialized Coding
+                                Agents, Testing Bots, and "Shadow" Evaluators.</span>
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i data-lucide="check-circle-2"
+                                style="color: var(--primary); width: 20px; flex-shrink: 0; margin-top: 4px;"></i>
+                            <span><strong>Elastic Capacity:</strong> Scale pod size up or down monthly based on your
+                                backlog velocity.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- The Token Model -->
+                <div class="feature-card"
+                    style="background: var(--bg-white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border-color);">
+                    <h3
+                        style="color: var(--primary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                        <i data-lucide="coins"></i> Token-Based Subscription
+                    </h3>
+                    <p style="font-size: 1.1rem; color: var(--text-dark); margin-bottom: 1.5rem;">
+                        A simple "Services-as-Software" subscription. Architecture to Deployment in one predictable
+                        monthly fee.
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i data-lucide="check-circle-2"
+                                style="color: var(--primary); width: 20px; flex-shrink: 0; margin-top: 4px;"></i>
+                            <span><strong>Outcome-Based:</strong> Tokens map to units of value (e.g., "1 Persona
+                                Deployed", "1 App Migrated"), not hours.</span>
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i data-lucide="check-circle-2"
+                                style="color: var(--primary); width: 20px; flex-shrink: 0; margin-top: 4px;"></i>
+                            <span><strong>Rollover & Swap:</strong> Unused tokens roll over. Swap capability between
+                                Engineering, Strategy, and Ops Pods instantly.</span>
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i data-lucide="check-circle-2"
+                                style="color: var(--primary); width: 20px; flex-shrink: 0; margin-top: 4px;"></i>
+                            <span><strong>Transparency:</strong> Real-time dashboard of token burn vs. value
+                                delivered.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 HCLTech AI Labs. Internal Use Only - Confidential.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function showOffering(id, event) {
+            if (event) event.preventDefault();
+
+            // Update Buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('href') === '#' + id) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Update Sections
+            document.querySelectorAll('.offering-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+
+            // Re-init icons to be safe
+            lucide.createIcons();
+        }
+    </script>
+
+</body>
+
+</html>
